@@ -1,0 +1,8 @@
+# These files are already ignored because 'clasp push' only pushes files that have a recognizable
+# extension or are appscript.json. Folders and other JSON files are ignored, but I'm including them
+# here anyway to make that explicit.
+
+node_modules
+package-lock.json
+package.json
+tsconfig.json
