@@ -4,13 +4,19 @@
   "description": "",
   "main": "General.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@rollup/plugin-typescript": "^11.1.4",
     "@types/google-apps-script": "^1.0.70",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@open-wc/building-rollup": "^3.0.2",
+    "deepmerge": "^4.3.1",
+    "rimraf": "^5.0.2"
   }
 }
