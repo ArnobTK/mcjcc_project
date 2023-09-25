@@ -1,3 +1,5 @@
+import { MCWCR_SSID, IDs_SHEETID } from "./spreadsheetIDs";
+
 /**
  * Writes after the end of the last row of data of the specified sheet in the specified
  * spreadsheet using a 2D array.
@@ -55,4 +57,23 @@ function writeAfterLastRow(
     array[0].length
   );
   range.setValues(array);
+}
+
+function getSheetById(
+  ssId: string,
+  sheetId: number
+): GoogleAppsScript.Spreadsheet.Sheet | null {
+  let sheets = SpreadsheetApp.openById(ssId).getSheets();
+  let sheet = sheets.find((sheet) => {
+    sheet.getSheetId() === sheetId;
+  });
+
+  if (!sheet) {
+    return NaN;
+  }
+  return sheet;
+}
+
+function testGetSheetById() {
+  console.log(getSheetById(MCWCR_SSID, IDs_SHEETID)?.getSheetName());
 }
