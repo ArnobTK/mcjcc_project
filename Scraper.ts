@@ -1,3 +1,5 @@
+import { courtIDs } from "./courtIDs";
+
 // CheerioGS documentation: https://github.com/tani/cheeriogs
 
 function main() {
@@ -7,13 +9,13 @@ function main() {
 
 /**
  * Queries MCJCC for info on cases happening on specific days.
- * @param {integer} id - A valid Court ID. See Constants.gs for list of valid IDs.
+ * @param {number} id - A valid Court ID. See Constants.gs for list of valid IDs.
  * @param {Date} startDate - A valid start date from which to search the website.
- * @param {integer} length - A positive integer specifying how many days in the
+ * @param {number} length - A positive integer specifying how many days in the
  *  future to query.
  * @return {Array<Array<String>>} rows - Rows of case data
  */
-function mcjccQuery(id, startDate, length) {
+function mcjccQuery(id: number, startDate: Date, length: number) {
 
     if (!courtIDs[id]) {
         throw new RangeError("Invalid ID '" + id + "'. id must be a valid court ID");

@@ -9,11 +9,17 @@ enum centers {
   NERCC = "Northeast Regional Court Center",
   SRCC = "Santan Regional Court Center",
   SERPSF = "Southeast Regional Public Service Facility",
-  P = "209 E Pima St"
+  P = "209 E Pima St",
 }
-const courtIDs = new Map<string, Court>([
+
+const courts = {
+  3822: "Downtown",
+  Downtown: 3822,
+};
+
+export const courtIDs = new Map<string, Court>([
   [
-    "Downtown",
+    "3822",
     {
       id: 3822,
       center: centers.DJC,

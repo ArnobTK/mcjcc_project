@@ -26,7 +26,7 @@ function resetURLFetched() {
     urlFetchedRange.setValue(0);
 }
 
-function createLimitTrigger(functionName) {
+function createLimitTrigger(functionName: string) {
     ScriptApp.newTrigger(functionName)
     .timeBased()
     .after(24 * 60 * 60 * 1000)
